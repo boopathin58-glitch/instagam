@@ -43,3 +43,10 @@ app.post("/save-password", async (req, res) => {
 app.listen(process.env.PORT || 5000, () => {
   console.log("Server running on port 5000");
 });
+
+app.get("/health", (req, res) => {
+    res.status(200).json({
+        status: "OK",
+        server: "Running"
+    });
+});
